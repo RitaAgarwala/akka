@@ -57,12 +57,9 @@ object AdapterSpec {
             Same
         }
     } onSignal {
-      case (ctx, sig) ⇒ sig match {
-        case Terminated(ref) ⇒
-          probe ! "terminated"
-          Same
-        case _ ⇒ Unhandled
-      }
+      case (ctx, Terminated(ref)) ⇒
+        probe ! "terminated"
+        Same
     }
 
   sealed trait Typed2Msg

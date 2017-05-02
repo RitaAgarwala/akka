@@ -434,7 +434,6 @@ class ActorCellSpec extends Spec with Matchers with BeforeAndAfterAll with Scala
         case _ ⇒ Unhandled
       } onSignal {
         case (_, PostStop) ⇒ ???
-        case _             ⇒ Unhandled
       }, ec, 1000, parent)
       val ref = new LocalActorRef(parent.path / "child", cell)
       cell.setSelf(ref)

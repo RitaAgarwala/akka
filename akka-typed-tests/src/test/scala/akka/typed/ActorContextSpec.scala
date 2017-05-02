@@ -149,7 +149,6 @@ object ActorContextSpec {
               case (_, sig) ⇒
                 monitor ! GotSignal(sig)
                 Actor.Same
-
             }
           case GetAdapter(replyTo, name) ⇒
             replyTo ! Adapter(ctx.spawnAdapter(identity, name))
